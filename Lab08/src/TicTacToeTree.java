@@ -37,11 +37,7 @@ public class TicTacToeTree {
 		String[] boards = new String[blankcount];
 		for (int i=0; i<blankcount;i++) {
 			boards[i] = board.substring(0,index[i])+player+board.substring(index[i]+1);
-			for (int j=0;j<(board.length()-blankcount);j++) {
-				System.out.print(" ");
-			}
-			System.out.print(boards[i]);
-			System.out.println("");
+
 		}
 		if (player == "x") {
 			nextPlayer = "o";
@@ -50,6 +46,11 @@ public class TicTacToeTree {
 			nextPlayer = "x";
 		}
 		for (int i=0; i<blankcount;i++) {
+			for (int j=0;j<(board.length()-blankcount*2);j++) {
+				System.out.print(" ");
+			}
+			System.out.print(boards[i]);
+			System.out.println("");
 			createNode(boards[i],nextPlayer);
 		}
 		//System.out.println(blankcount);
